@@ -1,4 +1,5 @@
 import { Component } from "react";
+import css from '../Feedback/Feedback.module.css';
 
 class Feedback extends Component {
     state = {
@@ -27,7 +28,7 @@ class Feedback extends Component {
 
     render() {
         return (
-            <div>
+            <div className={css.description}>
                 <h1>Please leave feedback</h1>
                 <button onClick={this.handleClickIncrementGood}>Good</button>
                 <button onClick={this.handleClickIncrementNeutral}>Neutral</button>
