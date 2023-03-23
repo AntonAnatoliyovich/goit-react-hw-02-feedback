@@ -26,6 +26,12 @@ class Feedback extends Component {
         }))
     }
 
+    // countTotalFeedback = () => {
+    //     this.setState((prevState) => ({
+    //         total: prevState.total 
+    //     }))
+    // }
+
     render() {
         return (
             <div className={css.feedback__card}>
