@@ -15,13 +15,13 @@
     font-weight: bold;
 }
 
-.feedback__cardButton{
+.card__button{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.feedback__button {
+.button {
     text-decoration: none;
     display: inline-block;
     padding: 12px 40px;
@@ -38,16 +38,18 @@
     cursor: pointer;
 }
 
-.feedback__button:hover,
-.feedback__button:focus {
+.button:hover,
+.button:focus {
     box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
     background-position: 0 0;
 }
 
-.feedback__statistics {
+.statistics {
     display: flex;
     flex-direction: column;
-    margin-top: 25px;
+}
+
+.statistics__text {
     font-family: 'Open Sans';
     color: #092658;
     font-size: 32px;
