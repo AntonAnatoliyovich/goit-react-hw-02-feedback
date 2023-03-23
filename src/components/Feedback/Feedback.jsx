@@ -1,5 +1,7 @@
 import { Component } from "react";
 import css from '../Feedback/Feedback.module.css';
+import { Section } from "./Section";
+
 
 class Feedback extends Component {
     state = {
@@ -8,11 +10,13 @@ class Feedback extends Component {
         bad: 0,
         total: 0,
         positiveFeedback: 0,
+        isShowStatistics: false,
     }
 
     handleClickIncrementGood = () => {
         this.setState((prevState) => ({
             good: prevState.good + 1,
+            isShowStatistics: true,
         }))
         this.countTotalFeedback()
         this.countPositiveFeedbackPercentage()
@@ -21,6 +25,7 @@ class Feedback extends Component {
     handleClickIncrementNeutral = () => {
         this.setState((prevState) => ({
             neutral: prevState.neutral + 1,
+            isShowStatistics: true,
         }))
         this.countTotalFeedback()
         this.countPositiveFeedbackPercentage()
@@ -29,6 +34,7 @@ class Feedback extends Component {
     handleClickIncrementBad = () => {
         this.setState((prevState) => ({
             bad: prevState.bad + 1,
+            isShowStatistics: true,
         }))
         this.countTotalFeedback()
         this.countPositiveFeedbackPercentage()
@@ -49,20 +55,17 @@ class Feedback extends Component {
     render() {
         return (
             <div className={css.feedback__card}>
-                <h1 className={css.feedback__title}>Please leave feedback</h1>
-                <div className={css.card__button}>
-                    <button className={css.button} onClick={this.handleClickIncrementGood}>Good</button>
-                    <button className={css.button} onClick={this.handleClickIncrementNeutral}>Neutral</button>
-                    <button className={css.button} onClick={this.handleClickIncrementBad}>Bad</button>
-                </div>
-                <h2 className={css.feedback__title}>Statistics</h2>
-                <div className={css.statistics}>
-                    <p className={css.statistics__text}>Good: {this.state.good}</p>
-                    <p className={css.statistics__text}>Neutral: {this.state.neutral}</p>
-                    <p className={css.statistics__text}>Bad: {this.state.bad}</p>
-                    <p className={css.statistics__text}>Total: {this.state.total}</p>
-                    <p className={css.statistics__text}>Positive feedback: {this.state.positiveFeedback}%</p>
-                </div>
+                <Section 
+                    title='Please leave feedback' 
+                    feedback={this} 
+                    isShowStatistics={this.state.isShowStatistics} 
+                />
+                <Section 
+                    title='Statistics' 
+                    feedback={this} 
+                    isShowBlock={false} 
+                    isShowStatistics={this.state.isShowStatistics} 
+                />
             </div>
         )
     }
