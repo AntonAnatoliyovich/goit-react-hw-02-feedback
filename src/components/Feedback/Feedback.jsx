@@ -7,30 +7,31 @@ class Feedback extends Component {
         bad: 0,
     }
 
-    handleClickIncrement = () => {
+    handleClickIncrementGood = () => {
         this.setState((prevState) => ({
             good: prevState.good + 1,
-            neutral: prevState.neutral + 1,
-            bad: prevState.bad + 1,
         }))
     }
 
-    // handleClickDecrement = () => {
-    //     this.setState((prevState) => ({
-    //         good: prevState.good - 1,
-    //         neutral: prevState.neutral - 1,
-    //         bad: prevState.bad - 1,
-    //     }))
-    // }
+    handleClickIncrementNeutral = () => {
+        this.setState((prevState) => ({
+            neutral: prevState.neutral + 1,
+        }))
+    }
 
+    handleClickIncrementBad = () => {
+        this.setState((prevState) => ({
+            bad: prevState.bad + 1,
+        }))
+    }
 
     render() {
         return (
             <div>
                 <h1>Please leave feedback</h1>
-                <button onClick={this.handleClickIncrement}>Good</button>
-                <button onClick={this.handleClickIncrement}>Neutral</button>
-                <button onClick={this.handleClickIncrement}>Bad</button>
+                <button onClick={this.handleClickIncrementGood}>Good</button>
+                <button onClick={this.handleClickIncrementNeutral}>Neutral</button>
+                <button onClick={this.handleClickIncrementBad}>Bad</button>
                 <h2>Statistics</h2>
                 <p>Good: {this.state.good}</p>
                 <p>Neutral: {this.state.neutral}</p>
@@ -41,3 +42,5 @@ class Feedback extends Component {
         )
     }
 }
+
+export default Feedback
