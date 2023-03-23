@@ -28,7 +28,13 @@ class Feedback extends Component {
 
     // countTotalFeedback = () => {
     //     this.setState((prevState) => ({
-    //         total: prevState.total 
+    //         total: prevState.total = prevState.good + prevState.neutral + prevState.bad
+    //     }))
+    // }
+
+    // countPositiveFeedbackPercentage = () => {
+    //     this.setState((prevState) => ({
+    //         positive feedback: = prevState.good / prevState.total
     //     }))
     // }
 
