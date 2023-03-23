@@ -28,8 +28,8 @@ class Feedback extends Component {
 
     render() {
         return (
-            <div className={css.description}>
-                <h1>Please leave feedback</h1>
+            <div className={css.feedback__card}>
+                <h1 className={css.feedback__title}>Please leave feedback</h1>
                 <button onClick={this.handleClickIncrementGood}>Good</button>
                 <button onClick={this.handleClickIncrementNeutral}>Neutral</button>
                 <button onClick={this.handleClickIncrementBad}>Bad</button>

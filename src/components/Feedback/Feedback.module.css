@@ -1,8 +1,16 @@
-.description {
-    width: 360px;
+.feedback__card {
+    width: 500px;
     margin: 25px;
     background-color: paleturquoise;
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.feedback__title {
+    margin-top: 25px;
+    font-family: 'Open Sans';
+    color: #092658;
+    font-size: 50px;
+    font-weight: bold;
 }
