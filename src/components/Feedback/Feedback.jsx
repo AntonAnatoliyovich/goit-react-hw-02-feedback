@@ -6,37 +6,45 @@ class Feedback extends Component {
         good: 0,
         neutral: 0,
         bad: 0,
+        total: 0,
+        positiveFeedback: 0,
     }
 
     handleClickIncrementGood = () => {
         this.setState((prevState) => ({
             good: prevState.good + 1,
         }))
+        this.countTotalFeedback()
+        this.countPositiveFeedbackPercentage()
     }
 
     handleClickIncrementNeutral = () => {
         this.setState((prevState) => ({
             neutral: prevState.neutral + 1,
         }))
+        this.countTotalFeedback()
+        this.countPositiveFeedbackPercentage()
     }
 
     handleClickIncrementBad = () => {
         this.setState((prevState) => ({
             bad: prevState.bad + 1,
         }))
+        this.countTotalFeedback()
+        this.countPositiveFeedbackPercentage()
     }
 
-    // countTotalFeedback = () => {
-    //     this.setState((prevState) => ({
-    //         total: prevState.total = prevState.good + prevState.neutral + prevState.bad
-    //     }))
-    // }
+    countTotalFeedback = () => {
+        this.setState((prevState) => ({
+            total: prevState.total = prevState.good + prevState.neutral + prevState.bad
+        }))
+    }
 
-    // countPositiveFeedbackPercentage = () => {
-    //     this.setState((prevState) => ({
-    //         positive feedback: = prevState.good / prevState.total
-    //     }))
-    // }
+    countPositiveFeedbackPercentage = () => {
+        this.setState((prevState) => ({
+            positiveFeedback: prevState.positiveFeedback = ((prevState.good / prevState.total) * 100).toFixed(2)
+        }))
+    }
 
     render() {
         return (
@@ -52,8 +60,8 @@ class Feedback extends Component {
                     <p className={css.statistics__text}>Good: {this.state.good}</p>
                     <p className={css.statistics__text}>Neutral: {this.state.neutral}</p>
                     <p className={css.statistics__text}>Bad: {this.state.bad}</p>
-                    <p className={css.statistics__text}>Total: </p>
-                    <p className={css.statistics__text}>Positive feedback: </p>
+                    <p className={css.statistics__text}>Total: {this.state.total}</p>
+                    <p className={css.statistics__text}>Positive feedback: {this.state.positiveFeedback}%</p>
                 </div>
             </div>
         )
