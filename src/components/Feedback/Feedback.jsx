@@ -8,9 +8,9 @@ class Feedback extends Component {
         good: 0,
         neutral: 0,
         bad: 0,
-        total: 0,
-        positiveFeedback: 0,
-        isShowStatistics: false,
+        // total: 0,
+        // positiveFeedback: 0,
+        // isShowStatistics: false,
     }
 
     handleClickIncrementGood = () => {
